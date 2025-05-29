@@ -3,10 +3,7 @@ import fitz  # PyMuPDF
 import streamlit as st
 import google.generativeai as genai
 
-GOOGLE_API_KEY="AIzaSyDbBCLmLG1pKnOI5FxA0IW_RduD0dbu3XY"
-
-# Configurar API Key
-genai.configure(api_key=GOOGLE_API_KEY)
+genai.configure(api_key=st.secrets["api"]["GOOGLE_API_KEY"])
 
 def ler_pdf(uploaded_file):
     texto = ""
